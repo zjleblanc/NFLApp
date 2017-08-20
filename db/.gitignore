@@ -1,0 +1,6 @@
+.idea
+.vscode
+postgres_col
+*.zip
+nfldb.sql
+nfldbenv/*

@@ -1,0 +1,10 @@
+FROM python:2.7.13-alpine3.6
+COPY ./app/* /app/
+WORKDIR /app
+RUN pip install virtualenv
+RUN mkdir ~/.virtual
+RUN virtualenv ~/.virtual/nflapi
+RUN source ~/.virtual/nflapi/bin/activate
+RUN pip install -r requirements.txt
+ENTRYPOINT ["python"]
+CMD ["app.py"]
