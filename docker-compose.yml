@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  api:
+    build: api
+    ports:
+     - "5000:5000"
+    links:
+     - nfldb
+    environment:
+     - POSTGRES_SERVER=localhost
+     - POSTGRES_PORT=5432
+  nfldb:
+    build: db
+    image: postgres:9.6-alpine
+    ports:
+     - "5432:5432"
+    environment:
+     - POSTGRES_PASSWORD=pass
