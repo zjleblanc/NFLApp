@@ -11,11 +11,9 @@
 #     mkdir -p $POSTGRES_VOL
 # fi
 
-CONTAINER_NAME="nfl_db"
-
 docker volume create nfl_db
 ## create container and mount file system for storage
-docker run --name "$CONTAINER_NAME" -p 5432:5432 --volume nfl_db:/var/lib/postgresql -e POSTGRES_PASSWORD=pass -d postgres:9.6-alpine
+docker run --name "nfl_db" -p 5432:5432 --volume nfl_db:/var/lib/postgresql -e POSTGRES_PASSWORD=pass -d postgres:9.6-alpine
 
 echo "Finished creating the docker container...you may need to run again if this takes a long time"
 

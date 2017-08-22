@@ -1,19 +1,25 @@
 version: "3"
 
 services:
+  nfldb:
+    image: postgres:9.6-alpine
+    container_name: nfldb
+    ports:
+     - "5432:5432"
+    tty: true
+    environment:
+     - POSTGRES_PASSWORD=pass
   api:
     build: api
+    container_name: nflapi
+    depends_on:
+      - nfldb
     ports:
      - "5000:5000"
     links:
      - nfldb
     environment:
-     - POSTGRES_SERVER=localhost
+     - POSTGRES_SERVER=nfldb
      - POSTGRES_PORT=5432
-  nfldb:
-    build: db
-    image: postgres:9.6-alpine
-    ports:
-     - "5432:5432"
-    environment:
+     - POSTGRES_USER=postgres
      - POSTGRES_PASSWORD=pass
