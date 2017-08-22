@@ -4,10 +4,10 @@ This repo contains the source code for our FF ML project
 
 ### Prerequisites
 
-Python 2.7
-Postgres Client (e.g. DBeaver)
-Docker
-Kitematic (optional)
+* Python 2.7
+* Postgres Client (e.g. DBeaver)
+* Docker
+* Kitematic (optional)
 
 ## Using Docker
 

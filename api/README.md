@@ -4,9 +4,9 @@ This repo contains the source code for our FF ML Api as well as the dockerfile f
 
 ### Prerequisites
 
-Python 2.7
-Docker
-Kitematic (optional)
+* Python 2.7
+* Docker
+* Kitematic (optional)
 
 ## Local Dev
 
