@@ -2,7 +2,7 @@ version: "3"
 
 services:
   nfldb:
-    image: postgres:9.6-alpine
+    image: scottmishra/nfldb2
     container_name: nfldb
     ports:
      - "5432:5432"
